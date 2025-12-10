@@ -1,5 +1,17 @@
 [[main]]
 none = "none"
 
+[[main]]
+name = "Education"
+pageRef = "Education"
+identifier = "FBHVWro6J1"
+weight = 8_888
+
+[[main]]
+name = "Career"
+pageRef = "career"
+identifier = "btvjtzPOlj"
+weight = 9_999
+
 [[footer]]
 none = "none"
