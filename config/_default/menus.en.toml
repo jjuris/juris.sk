@@ -9,7 +9,7 @@ weight = 8_888
 
 [[main]]
 name = "Career"
-pageRef = "career"
+pageRef = "Career"
 identifier = "btvjtzPOlj"
 weight = 9_999
 
