@@ -2,16 +2,28 @@
 none = "none"
 
 [[main]]
+name = "Education"
+pageRef = "Education"
+identifier = "FBHVWro6J1"
+weight = 6_666
+
+[[main]]
 name = "Career"
 pageRef = "Career"
 identifier = "btvjtzPOlj"
 weight = 7_777
 
 [[main]]
-name = "Education"
-pageRef = "Education"
-identifier = "FBHVWro6J1"
+name = "Projects"
+pageRef = "Projects"
+identifier = "wBsj54FCMm"
 weight = 8_888
+
+[[main]]
+name = "Contact"
+pageRef = "Contact"
+identifier = "oNrFfvGeRy"
+weight = 9_999
 
 [[footer]]
 none = "none"
