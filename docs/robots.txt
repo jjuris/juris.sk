@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://juris.sk/sitemap.xml
