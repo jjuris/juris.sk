@@ -1,5 +1,7 @@
 # Career
 
+![](featured-meeting.jpg)
+
 ## 2008
 ### Backup Team Captain / Backup Agent
 

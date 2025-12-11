@@ -1,5 +1,7 @@
 ## EDUCATION
 
+![](featured-library.png)
+
 ### [Grammar School Alejová](https://www.galeje.sk) – Košice, Slovakia, 1998 – 2006
 
 At Alejová, I discovered that mathematics is more than a subject — it’s a language that underlies all others. Those years shaped how I view the world: as a series of elegant patterns waiting to be understood. Every equation felt like a dialogue with logic itself, and through that dialogue, I learned discipline, patience, and curiosity.

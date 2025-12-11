@@ -42,7 +42,7 @@ cardView = false
 cardViewScreenWidth = false
 layoutBackgroundBlur = false
 disableHeroImageFilter = false
-homepageImage = "phd.jpg"
+homepageImage = "portrait.png"
 
 [article]
 showDate = false
