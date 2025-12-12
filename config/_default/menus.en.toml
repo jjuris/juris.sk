@@ -5,25 +5,31 @@ none = "none"
 name = "Education"
 pageRef = "Education"
 identifier = "FBHVWro6J1"
-weight = 6_666
+weight = 1
 
 [[main]]
 name = "Career"
 pageRef = "Career"
 identifier = "btvjtzPOlj"
-weight = 7_777
+weight = 2
 
 [[main]]
 name = "Projects"
 pageRef = "Projects"
 identifier = "wBsj54FCMm"
-weight = 8_888
+weight = 3
 
 [[main]]
 name = "Contact"
 pageRef = "Contact"
 identifier = "oNrFfvGeRy"
-weight = 9_999
+weight = 4
+
+[[main]]
+name = "Blog"
+url = "https://www.jozefjuris.sk/"
+identifier = "fAc2bgMI2V"
+weight = 5
 
 [[footer]]
 none = "none"
