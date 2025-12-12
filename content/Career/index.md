@@ -4,7 +4,8 @@ weight: 3
 
 # Career
 
-![](featured-meeting.jpg)
+
+![](serverroom.png)
 
 ## 2008
 ### Backup Team Captain / Backup Agent
@@ -28,6 +29,8 @@ I used my past experience to create my own framework for communication, fixing p
 traveling across the entire Czech Republic — to small towns for kiosks and big factories as UPS Software Specialist, where I saw real data centers from the inside.
 Big milestones were moving firm to a new site and building a network of kiosk terminals. This experiences made me crave work on projects that start in people’s minds and end up in reality.
 
+![](meeting.png)
+
 ## 2014
 ### Technology Consultant
 
@@ -46,6 +49,8 @@ storage, and even frontend. In this role, I truly found myself. But we couldn’
 
 Fortunately, I received an invitation from the recommendation systems team to help them migrate components to Kubernetes. From an admin, I became a developer.
 With the team, we started a new era where manual deployments turned into developer routine thanks to automation and orchestration.
+
+![](featured-bench.png)
 
 ## 2020
 ### Site Reliability Engineer
