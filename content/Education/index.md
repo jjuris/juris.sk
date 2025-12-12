@@ -6,13 +6,18 @@ weight: 4
 
 ![](featured-library.png)
 
-### [Grammar School Alejová](https://www.galeje.sk) – Košice, Slovakia, 1998 – 2006
+{{< timeline >}}
 
-At Alejová, I discovered that mathematics is more than a subject — it’s a language that underlies all others. Those years shaped how I view the world: as a series of elegant patterns waiting to be understood. Every equation felt like a dialogue with logic itself, and through that dialogue, I learned discipline, patience, and curiosity.
+{{< timelineItem icon="school-solid-full" header="Grammar School Alejová" badge="1998 – 2006" subheader="Košice, Slovakia" >}}
+At [Alejová](https://www.galeje.sk), I discovered that mathematics is more than a subject — it's a language that underlies all others. Those years shaped how I view the world: as a series of elegant patterns waiting to be understood. Every equation felt like a dialogue with logic itself, and through that dialogue, I learned discipline, patience, and curiosity.
+{{< /timelineItem >}}
 
-### [Pavol Jozef Šafárik University](https://www.upjs.sk) – Košice, Slovakia, 2006 – 2008
-During my time at the university, I found a way to transform the abstract beauty of mathematics into something practical — communication with machines. Informatics turned numbers into code, and logic into functionality. It was here that problem-solving evolved from a personal challenge to a creative process of building tools that could think alongside me.
+{{< timelineItem icon="school-solid-full" header="Pavol Jozef Šafárik University" badge="2006 – 2008" subheader="Košice, Slovakia" >}}
+During my time at the [university](https://www.upjs.sk), I found a way to transform the abstract beauty of mathematics into something practical — communication with machines. Informatics turned numbers into code, and logic into functionality. It was here that problem-solving evolved from a personal challenge to a creative process of building tools that could think alongside me.
+{{< /timelineItem >}}
 
-### [Unicorn College](https://unicornuniversity.net) – Prague, Czech Republic, 2014 – 2016
+{{< timelineItem icon="school-solid-full" header="Unicorn College" badge="2014 – 2016" subheader="Prague, Czech Republic" >}}
+At [Unicorn College](https://unicornuniversity.net), I learned that technology's real power lies not only in precision, but in coordination. I discovered how to manage ideas, people, and projects — to turn vision into structured execution. It completed the circle: mathematics gave me logic, informatics gave me language, and project management taught me connection. Each institution, in its way, helped define the professional and person I've become.
+{{< /timelineItem >}}
 
-At Unicorn College, I learned that technology’s real power lies not only in precision, but in coordination. I discovered how to manage ideas, people, and projects — to turn vision into structured execution. It completed the circle: mathematics gave me logic, informatics gave me language, and project management taught me connection. Each institution, in its way, helped define the professional and person I’ve become.
+{{< /timeline >}}
