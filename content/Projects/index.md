@@ -4,10 +4,10 @@ weight: 2
 
 # Projects
 
-{{< article link="/project/from-simple-recommendations-to-mlops/" showSummary=true compactSummary=true >}}
+[From Simple Recommendations to MLOps](/project/from-simple-recommendations-to-mlops/)
 
-{{< article link="/project/migration-to-kubernetes/" showSummary=true compactSummary=true >}}
+[Migration to Kubernetes](/project/migration-to-kubernetes/)
 
-{{< article link="/project/help-desk-migration/" showSummary=true compactSummary=true >}}
+[Help Desk Migration for Czech Police](/project/help-desk-migration/)
 
-{{< article link="/project/museums-and-galleries-information-terminal-network/" showSummary=true compactSummary=true >}}
+[Secure Kiosk Network for Vysočina Museums and Galleries](/project/museums-and-galleries-information-terminal-network/)

@@ -1,5 +1,5 @@
 ---
-title: Secure Kiosk Network for Vysočina Museums and Galleries
+title: Secure Kiosk Network for Vysocina Museums and Galleries
 date: 2013-12-11
 ---
 
@@ -7,7 +7,7 @@ date: 2013-12-11
 
 ## The project
 
-In summer 2013, Kraj Vysočina tasked us with deploying 47 interactive kiosks across museums and galleries to showcase digitized exhibits on https://mgvysociny.cz.
+In summer 2013, Vysocina region tasked us with deploying 47 interactive kiosks across museums and galleries to showcase digitized exhibits on https://mgvysociny.cz.
 Beyond hardware, I designed a monitored network with remote management, self-restarts, content lockdown, and The Dude integration—turning remote sites into reliable digital hubs.
 
 ## Key Challenges
