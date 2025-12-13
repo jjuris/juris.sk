@@ -4,6 +4,8 @@ weight: 2
 
 # Projects
 
+[CUE templating](/project/cue-templating/)
+
 [Personal development space](/project/personal-development-space/)
 
 [From Simple Recommendations to MLOps](/project/from-simple-recommendations-to-mlops/)
