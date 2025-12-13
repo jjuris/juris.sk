@@ -3,7 +3,7 @@ title: "Migration to Kubernetes"
 date: 2019-06-01
 ---
 
-![](featured.svg)
+![](featured.png)
 
 ## Project Overview
 
