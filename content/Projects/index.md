@@ -4,6 +4,8 @@ weight: 2
 
 # Projects
 
+[Personal development space](/project/personal-development-space/)
+
 [From Simple Recommendations to MLOps](/project/from-simple-recommendations-to-mlops/)
 
 [Self-service deployment into the production](/project/self-service-deployment-into-the-production/)
