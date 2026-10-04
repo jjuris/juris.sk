@@ -288,41 +288,13 @@ h2 {
 }
 .project-stack {
   display: grid;
-  gap: 64px;
-}
-.project-image {
-  position: relative;
-  display: block;
-  background: var(--wash);
-  overflow: hidden;
-}
-.project-image img {
-  width: 100%;
-  aspect-ratio: 1.55;
-  object-fit: cover;
-  transition: transform 400ms ease;
-}
-.project-image:hover img {
-  transform: scale(1.025);
-}
-.project-open {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  display: grid;
-  place-items: center;
-  background: var(--paper);
-  color: var(--ink);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  font-size: 21px;
+  gap: 32px;
 }
 .project-meta {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-block: 19px 9px;
+  margin-block: 0 9px;
   color: var(--muted);
   font-size: 10px;
   text-transform: uppercase;
@@ -432,9 +404,6 @@ h2 {
   padding-bottom: 24px;
   font-size: 15px;
 }
-.project-details .prose > figure:first-child {
-  display: none;
-}
 .project-details .prose p {
   max-width: none;
   font-size: 15px;
@@ -542,8 +511,9 @@ h2 {
   max-width: 840px;
   font-size: 17px;
 }
-.prose > h1:first-child,
-.prose > h2:first-child {
+.journey-content > h1:first-child,
+.prose-page > h1:first-child,
+.prose-page > h2:first-child {
   display: none;
 }
 .prose p,
@@ -651,7 +621,7 @@ h2 {
   margin-top: 40px;
 }
 .project-grid h2 {
-  margin-top: 18px;
+  margin-top: 0;
 }
 .reveal-ready {
   opacity: 0;
@@ -794,7 +764,7 @@ h2 {
     max-width: 440px;
   }
   .project-stack {
-    gap: 44px;
+    gap: 28px;
   }
   .project-meta {
     font-size: 9px;

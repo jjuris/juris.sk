@@ -4,8 +4,6 @@ date: 2020-01-01
 draft: false
 ---
 
-![](featured.png)
-
 ## Project overview
 Self-service deployment into production marked a key evolution in our team’s operations. As a former admin, I witnessed firsthand how manual processes created bottlenecks,
 but Kubernetes and GitOps tools like ArgoCD empowered developers to take ownership.

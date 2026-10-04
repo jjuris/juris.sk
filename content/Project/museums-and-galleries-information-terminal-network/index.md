@@ -3,8 +3,6 @@ title: Secure Kiosk Network for Vysocina Museums and Galleries
 date: 2013-12-11
 ---
 
-![](featured.jpg)
-
 ## The project
 
 In summer 2013, Vysocina region tasked us with deploying 47 interactive kiosks across museums and galleries to showcase digitized exhibits on https://mgvysociny.cz.

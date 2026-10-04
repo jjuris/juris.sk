@@ -3,8 +3,6 @@ title: "Migration to Kubernetes"
 date: 2019-06-01
 ---
 
-![](featured.png)
-
 ## Project Overview
 
 Migrating our components to Kubernetes marked a pivotal shift in our deployment strategy, streamlining operations and boosting efficiency.

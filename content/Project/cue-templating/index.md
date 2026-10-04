@@ -4,8 +4,6 @@ date: 2025-04-01
 draft: false
 ---
 
-![](featured.png)
-
 ## Background
 When I joined the team, our monorepo had around 20 components. Today, we manage nearly 200, making static configurations for CI pipelines, Docker images, Kubernetes manifests,
 and Docker Compose files nearly impossible to handle without errors, exceptions, and hacks.

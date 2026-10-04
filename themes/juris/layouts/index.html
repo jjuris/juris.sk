@@ -37,23 +37,18 @@
       <a class="text-link" href="#career">Continue to the journey <span aria-hidden="true">↓</span></a>
     </div>
     <div class="project-stack">
-      {{ range $index, $item := $portfolio.projects }}
-        {{ with $.Site.GetPage $item.path }}
-          {{ $title := .Title }}
+      {{ $projects := slice }}
+      {{ range $portfolio.projects }}
+        {{ $item := . }}
+        {{ with $.Site.GetPage .path }}
+          {{ $projects = $projects | append (dict "page" . "metadata" $item "date" .Date.Unix) }}
+        {{ end }}
+      {{ end }}
+      {{ range $index, $project := sort $projects "date" "desc" }}
+        {{ $item := $project.metadata }}
+        {{ with $project.page }}
           {{ $id := printf "project-%s" (.Title | urlize) }}
           <article id="{{ $id }}" class="project-card" data-reveal>
-            <figure class="project-image">
-              {{ with .Resources.GetMatch "featured.*" }}
-                {{ $image := .Resize "1000x webp" }}
-                <img
-                  src="{{ $image.RelPermalink }}"
-                  width="{{ $image.Width }}"
-                  height="{{ $image.Height }}"
-                  alt="{{ $title }}"
-                  loading="lazy"
-                  decoding="async">
-              {{ end }}
-            </figure>
             <div class="project-meta">
               <span>{{ $item.label }}</span
               ><span>{{ printf "%02d" (add $index 1) }} / {{ .Date.Format "2006" }}</span>

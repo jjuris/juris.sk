@@ -3,8 +3,6 @@ title: "Personal development space"
 date: 2022-01-01
 ---
 
-![](featured.png)
-
 ## Project overview
 When I joined the development team, our research colleagues needed a reliable way to standardize their personal and shared virtual machine configurations.
 What started as a solution for just 5 researchers has scaled to support 30 researchers, 15 developers plus a growing analytics team. This project became particularly valuable

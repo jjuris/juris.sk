@@ -17,7 +17,7 @@
     {{ if eq (lower .Path) "/projects" }}
       {{ partial "project-grid.html" . }}
     {{ else }}
-      <div class="prose">{{ .Content }}</div>
+      <div class="prose{{ if ne (lower .Section) "project" }}prose-page{{ end }}">{{ .Content }}</div>
     {{ end }}
     {{ if eq (lower .Section) "project" }}
       <div class="article-end">

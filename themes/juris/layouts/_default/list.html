@@ -8,20 +8,6 @@
     <div class="project-grid">
       {{ range .Pages.ByDate.Reverse }}
         <article class="project-card">
-          {{ $title := .Title }}
-          {{ $url := .RelPermalink }}
-          {{ with .Resources.GetMatch "featured.*" }}
-            {{ $image := .Resize "800x webp" }}
-            <a class="project-image" href="{{ $url }}"
-              ><img
-                src="{{ $image.RelPermalink }}"
-                width="{{ $image.Width }}"
-                height="{{ $image.Height }}"
-                alt="{{ $title }}"
-                loading="lazy">
-              /></a
-            >
-          {{ end }}
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         </article>
       {{ end }}
