@@ -1,0 +1,3 @@
+{{ $destination := .Destination }}
+{{ if hasPrefix $destination "www." }}{{ $destination = printf "https://%s" $destination }}{{ end }}
+<a href="{{ $destination | safeURL }}" {{ with .Title }}title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

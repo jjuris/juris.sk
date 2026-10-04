@@ -1,4 +1,5 @@
 ---
+title: "Contact"
 weight: 1
 ---
 

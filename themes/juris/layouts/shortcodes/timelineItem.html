@@ -1,0 +1,14 @@
+{{ $body := .Inner }}
+{{ range .Page.Resources }}
+  {{ if eq .ResourceType "image" }}
+    {{ $body = replace $body (printf `src="%s"` .Name) (printf `src="%s" width="%d" height="%d" alt="" loading="lazy" decoding="async"` .RelPermalink .Width .Height) }}
+  {{ end }}
+{{ end }}
+<li class="timeline-item" data-reveal>
+  <div class="timeline-date">{{ .Get "badge" }}</div>
+  <div class="timeline-content">
+    <h2>{{ .Get "header" }}</h2>
+    {{ with .Get "subheader" }}<p class="eyebrow">{{ . }}</p>{{ end }}
+    <div>{{ if .Get "md" }}{{ $body | markdownify }}{{ else }}{{ $body | safeHTML }}{{ end }}</div>
+  </div>
+</li>

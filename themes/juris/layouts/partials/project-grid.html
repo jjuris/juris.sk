@@ -1,0 +1,28 @@
+<div class="project-grid">
+  {{ range .Site.RegularPages.ByDate.Reverse }}
+    {{ if eq (lower .Section) "project" }}
+      {{ $title := .Title }}
+      {{ $url := .RelPermalink }}
+      <article class="project-card" data-reveal>
+        {{ with .Resources.GetMatch "featured.*" }}
+          {{ $image := .Resize "800x webp" }}
+          <a class="project-image" href="{{ $url }}" aria-label="Read {{ $title }}">
+            <img
+              src="{{ $image.RelPermalink }}"
+              width="{{ $image.Width }}"
+              height="{{ $image.Height }}"
+              alt="{{ $title }}"
+              loading="lazy"
+              decoding="async">
+            <span class="project-open" aria-hidden="true">↗</span>
+          </a>
+        {{ end }}
+        <div class="project-meta"><span>Project</span><span>{{ .Date.Format "2006" }}</span></div>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <a class="text-link" href="{{ .RelPermalink }}" aria-label="Read project: {{ .Title }}"
+          >Read project <span aria-hidden="true">↗</span></a
+        >
+      </article>
+    {{ end }}
+  {{ end }}
+</div>
