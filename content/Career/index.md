@@ -9,7 +9,6 @@ weight: 3
 {{< timeline >}}
 
 {{< timelineItem icon="briefcase-solid-full" header="Backup Team Captain / Backup Agent" badge="2008" subheader="Enterprise IT Infrastructure" >}}
-<img src="nightshift.png" />
 This was my first real job, where I first touched a large enterprise IT infrastructure. I took every task seriously and quickly became the top in resolving tickets. But the work lacked creativity, so it was time for a change.
 {{< /timelineItem >}}
 
@@ -22,7 +21,6 @@ After two big global companies, I wanted to try a small firm as local admin. Fin
 {{< /timelineItem >}}
 
 {{< timelineItem icon="briefcase-solid-full" header="Technology Consultant" badge="2014" subheader="ITSM Implementation" >}}
-<img src="meeting.png" />
 I returned to my roots, to my first employer, but no longer as a user of the ticketing system — now as its creator. I worked on implementing ITSM software for an insurance company and a telecom firm, culminating in the full migration of an old solution to a new one for the police — a project I led end-to-end on my own. The technology, however, was outdated, and I once again experienced the stifled processes of a global corporation.
 {{< /timelineItem >}}
 
@@ -40,7 +38,6 @@ The company's IT began transforming from a "everyone does everything" style to h
 {{< /timelineItem >}}
 
 {{< timelineItem icon="briefcase-solid-full" header="Infrastructure & Platform Engineer" badge="Today" subheader="Full-Stack Platform Engineering" >}}
-<img src="featured-bench.png" />
 Today, I handle everything I've experienced in my career so far: helping a research colleague troubleshoot a database connection issue, developing CI pipelines, assisting with migrating our system to a newer infrastructure service version, calculating budgets for services next year, negotiating with product managers and directors on the technological vision of our system, and occasionally solving operational problems.
 {{< /timelineItem >}}
 

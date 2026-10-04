@@ -9,8 +9,12 @@
     .filter(Boolean);
   let scheduled = false;
   let scrollAnimation = null;
+  const projectClosers = [];
 
   const updateProgress = () => {
+    if (scrollAnimation === null) {
+      projectClosers.forEach((closeOutsideViewport) => closeOutsideViewport());
+    }
     if (isHome) {
       header.classList.toggle("is-visible", window.scrollY > 32 || header.contains(document.activeElement));
     }
@@ -52,6 +56,103 @@
     detail.addEventListener("toggle", scheduleProgress);
   });
   updateProgress();
+
+  document.querySelectorAll(".project-details").forEach((detail) => {
+    const summary = detail.querySelector("summary");
+    const body = detail.querySelector(".project-body");
+    if (!summary || !body) {
+      return;
+    }
+    let expansion = null;
+    let expansionFrame = null;
+    let targetOpen = detail.open;
+
+    const stopExpansion = () => {
+      if (expansion) {
+        expansion.onfinish = null;
+        expansion.cancel();
+        expansion = null;
+      }
+      if (expansionFrame !== null) {
+        window.cancelAnimationFrame(expansionFrame);
+        expansionFrame = null;
+      }
+    };
+
+    const finishExpansion = () => {
+      stopExpansion();
+      detail.open = targetOpen;
+      body.style.removeProperty("height");
+      body.style.removeProperty("overflow");
+      body.inert = false;
+      scheduleProgress();
+    };
+
+    projectClosers.push(() => {
+      if (!detail.open) {
+        return;
+      }
+      const card = detail.closest(".project-card");
+      const bounds = card.getBoundingClientRect();
+      const aboveViewport = bounds.bottom <= header.getBoundingClientRect().height;
+      if (!aboveViewport && bounds.top < window.innerHeight) {
+        return;
+      }
+      const scrollBefore = window.scrollY;
+      targetOpen = false;
+      finishExpansion();
+      if (aboveViewport) {
+        // Preserve the position of the content being read below this project.
+        const removedHeight = bounds.height - card.getBoundingClientRect().height;
+        window.scrollTo({ top: Math.max(0, scrollBefore - removedHeight), behavior: "instant" });
+      }
+    });
+
+    const trackExpansion = () => {
+      scheduleProgress();
+      if (expansion) {
+        expansionFrame = window.requestAnimationFrame(trackExpansion);
+      }
+    };
+
+    summary.addEventListener("click", (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        reducedMotion.matches ||
+        typeof body.animate !== "function"
+      ) {
+        return;
+      }
+      event.preventDefault();
+      const startHeight = detail.open ? body.getBoundingClientRect().height : 0;
+      targetOpen = expansion ? !targetOpen : !detail.open;
+      stopExpansion();
+      // Keep native details open until the closing animation completes.
+      detail.open = true;
+      body.inert = !targetOpen;
+      body.style.height = `${startHeight}px`;
+      body.style.overflow = "hidden";
+      const endHeight = targetOpen ? body.scrollHeight : 0;
+      expansion = body.animate([{ height: `${startHeight}px` }, { height: `${endHeight}px` }], {
+        duration: targetOpen ? 845 : 585,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+      });
+      expansion.onfinish = finishExpansion;
+      trackExpansion();
+    });
+
+    window.addEventListener("resize", () => {
+      if (expansion) {
+        finishExpansion();
+      }
+    });
+    reducedMotion.addEventListener("change", () => {
+      if (reducedMotion.matches && expansion) {
+        finishExpansion();
+      }
+    });
+  });
 
   const cancelScroll = () => {
     if (scrollAnimation !== null) {
@@ -112,6 +213,7 @@
         scrollAnimation = window.requestAnimationFrame(step);
       } else {
         scrollAnimation = null;
+        scheduleProgress();
         // Preserve normal keyboard navigation after jumping to a section.
         const alreadyFocusable = target.hasAttribute("tabindex");
         if (!alreadyFocusable) {

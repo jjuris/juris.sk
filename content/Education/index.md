@@ -5,8 +5,6 @@ weight: 4
 
 ## EDUCATION
 
-![](featured-library.png)
-
 {{< timeline >}}
 
 {{< timelineItem icon="school-solid-full" header="Grammar School Alejová" badge="1998 – 2006" subheader="Košice, Slovakia" >}}

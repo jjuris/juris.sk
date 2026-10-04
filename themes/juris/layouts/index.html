@@ -21,9 +21,6 @@
           fetchpriority="high">
       {{ end }}
       <figcaption><span>Jozef Juris</span><span>Engineer. Problem solver.</span></figcaption>
-      <span class="portrait-mark" aria-hidden="true">
-        <img src="{{ "android-chrome-512x512.png" | relURL }}" width="512" height="512" alt="">
-      </span>
     </figure>
     <div class="hero-bottom">
       <span>Infrastructure · Platforms · People</span
@@ -58,9 +55,14 @@
             <h3>{{ .Title }}</h3>
             <p>{{ $item.description }}</p>
             <details class="project-details">
-              <summary>Explore this project <span class="detail-toggle" aria-hidden="true"></span></summary>
-              <div class="prose">
-                {{ .Content | replaceRE `id="([^"]+)"` (printf `id="%s-$1"` $id) | replaceRE `href="#([^"]+)"` (printf `href="#%s-$1"` $id) | safeHTML }}
+              <summary class="project-action" aria-label="Explore this project: {{ .Title }}">
+                <span class="action-label">Explore this project</span>
+                <span class="detail-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="project-body">
+                <div class="prose">
+                  {{ .Content | replaceRE `id="([^"]+)"` (printf `id="%s-$1"` $id) | replaceRE `href="#([^"]+)"` (printf `href="#%s-$1"` $id) | safeHTML }}
+                </div>
               </div>
             </details>
           </article>

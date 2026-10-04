@@ -260,25 +260,6 @@ em {
   font-size: 10px;
   margin-top: 14px;
 }
-.portrait-mark {
-  position: absolute;
-  left: -27px;
-  bottom: 64px;
-  background: var(--blue);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  isolation: isolate;
-}
-.portrait-mark img {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  aspect-ratio: 1;
-  object-fit: contain;
-  mix-blend-mode: screen;
-}
 .hero-bottom {
   display: flex;
   justify-content: space-between;
@@ -323,7 +304,15 @@ h2 {
 }
 .project-stack {
   display: grid;
-  gap: 32px;
+  gap: 28px;
+}
+.project-stack > .project-card {
+  position: relative;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.project-stack > .project-card > h3 {
+  padding-right: 64px;
 }
 .project-meta {
   display: flex;
@@ -380,11 +369,6 @@ h2 {
   max-width: 800px;
   font-size: 16px;
 }
-.journey-content .timeline-content img {
-  float: right;
-  width: 240px;
-  margin: 0 0 20px 32px;
-}
 .education-section {
   display: grid;
   grid-template-columns: 0.9fr 1.3fr;
@@ -402,26 +386,38 @@ h2 {
   display: none;
 }
 .project-details {
-  margin-top: 20px;
-  border-block: 1px solid var(--line);
+  margin-top: 0;
 }
 .project-details summary {
+  position: absolute;
+  top: 20px;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  min-height: 52px;
-  padding-block: 12px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
   list-style: none;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
 }
 .project-details summary::-webkit-details-marker {
   display: none;
 }
-.project-details summary:hover {
-  color: var(--blue);
+.project-details summary:hover,
+.project-details summary:focus-visible {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+.project-details summary:hover .detail-toggle::before,
+.project-details summary:focus-visible .detail-toggle::before {
+  color: var(--paper);
 }
 .project-details summary:focus-visible {
   outline: 3px solid var(--blue);
@@ -430,12 +426,45 @@ h2 {
 .detail-toggle::before {
   content: "+";
   color: var(--blue);
-  font-size: 22px;
+  font-size: 26px;
+  line-height: 1;
+}
+.detail-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.action-label {
+  position: absolute;
+  right: 56px;
+  top: 6px;
+  padding: 5px 12px;
+  white-space: nowrap;
+  color: var(--paper);
+  background: var(--ink);
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.project-action:hover .action-label,
+.project-action:focus-visible .action-label {
+  opacity: 1;
+  visibility: visible;
 }
 .project-details[open] .detail-toggle::before {
   content: "−";
 }
+.project-body {
+  display: flow-root;
+}
 .project-details .prose {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
   padding-bottom: 24px;
   font-size: 15px;
 }
@@ -641,9 +670,6 @@ h2 {
   font-size: 15px;
   color: var(--muted);
 }
-.timeline-content img {
-  max-height: 320px;
-}
 .article-end {
   border-top: 1px solid var(--line);
   margin-top: 64px;
@@ -693,9 +719,6 @@ h2 {
   .journey-content .timeline-item {
     grid-template-columns: 120px 1fr;
     gap: 32px;
-  }
-  .journey-content .timeline-content img {
-    width: 190px;
   }
   .career-preview {
     grid-template-columns: repeat(2, 1fr);
@@ -761,12 +784,6 @@ h2 {
     max-height: 30svh;
     object-position: 50% 35%;
   }
-  .portrait-mark {
-    left: -16px;
-    bottom: 45px;
-    width: 64px;
-    height: 64px;
-  }
   .hero-bottom {
     margin-top: 0;
     font-size: 9px;
@@ -786,11 +803,6 @@ h2 {
   .journey-content .timeline-item {
     grid-template-columns: 1fr;
     gap: 14px;
-  }
-  .journey-content .timeline-content img {
-    float: none;
-    width: 100%;
-    margin: 0 0 24px;
   }
   .section-intro {
     position: static;
