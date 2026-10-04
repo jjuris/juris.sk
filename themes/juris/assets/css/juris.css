@@ -296,6 +296,16 @@ h2 {
   position: sticky;
   top: 140px;
 }
+.journey-layout {
+  grid-template-columns: 1.3fr 0.9fr;
+  grid-template-areas: "content intro";
+}
+.journey-layout > .section-intro {
+  grid-area: intro;
+}
+.journey-content {
+  grid-area: content;
+}
 .section-intro h2 {
   margin-block: 24px;
 }
@@ -761,6 +771,11 @@ h2 {
   .education-section {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .journey-layout {
+    grid-template-areas:
+      "intro"
+      "content";
   }
   .section-intro {
     position: static;
