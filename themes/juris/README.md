@@ -21,13 +21,14 @@ The previous Blowfish submodule is retained, but the active theme is `juris`.
 All seven projects, the complete career timeline, education, and contact are on
 the homepage. The introductory profile photo is the only image displayed on the site.
 Projects are automatically sorted by their content dates, newest
-first. Native disclosure controls open full project articles inline.
+first. Projects, career, and education use the same disclosure cards: titles, metadata,
+and dates in the top right corner, with full text opened by a circular plus.
 The circular plus next to each project title opens its article; a tooltip
 explains the action on hover or keyboard focus. The control has a 44px touch target.
-Project text rolls open and closed smoothly, with native instant disclosure
+All disclosure text rolls open and closed smoothly, with native instant disclosure
 when JavaScript is unavailable or reduced motion is requested.
-An open project automatically closes once its whole card leaves the visible
-viewport. Closing a project above the viewport preserves the reader's position.
+An open card automatically closes once it leaves the visible
+viewport. Closing a card above the viewport preserves the reader's position.
 The opening screen fills the viewport with the introduction. The homepage
 header appears after scrolling down and hides again at the top; projects begin
 below the opening screen. With JavaScript disabled the header stays available.

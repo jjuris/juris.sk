@@ -281,7 +281,9 @@ h2 {
   letter-spacing: -2px;
   line-height: 1.15;
 }
-.work-section {
+.work-section,
+.journey-layout,
+.education-section {
   display: grid;
   grid-template-columns: 0.9fr 1.3fr;
   gap: 90px;
@@ -302,17 +304,23 @@ h2 {
 .section-intro .text-link {
   margin-top: 28px;
 }
-.project-stack {
+.disclosure-stack {
   display: grid;
   gap: 28px;
 }
-.project-stack > .project-card {
+.disclosure-stack > .disclosure-card {
   position: relative;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--line);
 }
-.project-stack > .project-card > h3 {
+.disclosure-stack > .disclosure-card > h2,
+.disclosure-stack > .disclosure-card > h3 {
+  margin: 0;
   padding-right: 64px;
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+  font-weight: 500;
 }
 .project-meta {
   display: flex;
@@ -323,6 +331,10 @@ h2 {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.7px;
+}
+.project-meta > span:last-child {
+  flex-shrink: 0;
+  text-align: right;
 }
 .project-card h3,
 .project-card h2 {
@@ -344,51 +356,13 @@ h2 {
 .journey-section {
   background: var(--wash);
 }
-.journey-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 28px;
-}
-.journey-heading h2 {
-  margin-top: 24px;
-}
-.journey-heading .text-link {
-  flex-shrink: 0;
-}
-.journey-content {
-  max-width: none;
-  margin-top: 56px;
-}
-.journey-content .timeline-item {
-  grid-template-columns: 180px 1fr;
-  gap: 56px;
-}
-.journey-content .timeline-content > div {
-  display: flow-root;
-  max-width: 800px;
-  font-size: 16px;
-}
-.education-section {
-  display: grid;
-  grid-template-columns: 0.9fr 1.3fr;
-  gap: 90px;
-  align-items: start;
-}
-.education-section .section-intro h2 {
-  margin-block: 24px;
-}
-.education-content .timeline-item {
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
 .education-content > h3:first-child {
   display: none;
 }
-.project-details {
+.disclosure-details {
   margin-top: 0;
 }
-.project-details summary {
+.disclosure-details summary {
   position: absolute;
   top: 20px;
   right: 0;
@@ -407,19 +381,19 @@ h2 {
     background 180ms ease,
     border-color 180ms ease;
 }
-.project-details summary::-webkit-details-marker {
+.disclosure-details summary::-webkit-details-marker {
   display: none;
 }
-.project-details summary:hover,
-.project-details summary:focus-visible {
+.disclosure-details summary:hover,
+.disclosure-details summary:focus-visible {
   background: var(--blue);
   border-color: var(--blue);
 }
-.project-details summary:hover .detail-toggle::before,
-.project-details summary:focus-visible .detail-toggle::before {
+.disclosure-details summary:hover .detail-toggle::before,
+.disclosure-details summary:focus-visible .detail-toggle::before {
   color: var(--paper);
 }
-.project-details summary:focus-visible {
+.disclosure-details summary:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 4px;
 }
@@ -451,29 +425,30 @@ h2 {
   pointer-events: none;
   transition: opacity 180ms ease;
 }
-.project-action:hover .action-label,
-.project-action:focus-visible .action-label {
+.disclosure-action:hover .action-label,
+.disclosure-action:focus-visible .action-label {
   opacity: 1;
   visibility: visible;
 }
-.project-details[open] .detail-toggle::before {
+.disclosure-details[open] .detail-toggle::before {
   content: "−";
 }
-.project-body {
+.disclosure-body {
   display: flow-root;
 }
-.project-details .prose {
+.disclosure-details .prose {
   margin-top: 28px;
   border-top: 1px solid var(--line);
   padding-bottom: 24px;
   font-size: 15px;
 }
-.project-details .prose p {
+.disclosure-details .prose p {
+  color: var(--muted);
   max-width: none;
   font-size: 15px;
   margin-block: 20px;
 }
-.project-details .prose h2 {
+.disclosure-details .prose h2 {
   font-size: 24px;
   letter-spacing: -0.7px;
   margin-top: 32px;
@@ -637,38 +612,13 @@ h2 {
   padding-left: 24px;
   color: var(--muted);
 }
-.prose li + li {
+.prose li + li:not(.disclosure-card) {
   margin-top: 12px;
 }
 .timeline {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-.timeline-item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 36px;
-  border-top: 1px solid var(--line);
-  padding-block: 40px;
-}
-.timeline-date {
-  font-family: var(--serif);
-  font-size: 24px;
-  color: var(--blue);
-}
-.timeline-content h2,
-.timeline-content h3 {
-  margin: 0 0 12px;
-  font-size: 26px;
-  letter-spacing: -0.8px;
-}
-.timeline-content .eyebrow {
-  margin: 0 0 20px;
-}
-.timeline-content > div {
-  font-size: 15px;
-  color: var(--muted);
 }
 .article-end {
   border-top: 1px solid var(--line);
@@ -710,15 +660,10 @@ h2 {
   .hero-portrait {
     margin-left: 12px;
   }
-  .work-section {
-    gap: 44px;
-  }
+  .work-section,
+  .journey-layout,
   .education-section {
     gap: 44px;
-  }
-  .journey-content .timeline-item {
-    grid-template-columns: 120px 1fr;
-    gap: 32px;
   }
   .career-preview {
     grid-template-columns: repeat(2, 1fr);
@@ -792,17 +737,11 @@ h2 {
   .hero-bottom a {
     gap: 8px;
   }
-  .work-section {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  .work-section,
+  .journey-layout,
   .education-section {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-  .journey-content .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 14px;
   }
   .section-intro {
     position: static;
@@ -810,20 +749,15 @@ h2 {
   .section-intro p:not(.eyebrow) {
     max-width: 440px;
   }
-  .project-stack {
+  .disclosure-stack {
     gap: 28px;
   }
   .project-meta {
     font-size: 9px;
   }
-  .project-card h3 {
+  .disclosure-stack > .disclosure-card > h2,
+  .disclosure-stack > .disclosure-card > h3 {
     font-size: 23px;
-  }
-  .journey-heading {
-    display: block;
-  }
-  .journey-heading .text-link {
-    margin-top: 20px;
   }
   .career-preview {
     margin-top: 40px;
@@ -860,11 +794,6 @@ h2 {
   }
   .prose {
     font-size: 16px;
-  }
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding-block: 28px;
   }
   .project-grid {
     grid-template-columns: 1fr;

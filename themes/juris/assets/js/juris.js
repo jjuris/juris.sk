@@ -9,11 +9,11 @@
     .filter(Boolean);
   let scheduled = false;
   let scrollAnimation = null;
-  const projectClosers = [];
+  const disclosureClosers = [];
 
   const updateProgress = () => {
     if (scrollAnimation === null) {
-      projectClosers.forEach((closeOutsideViewport) => closeOutsideViewport());
+      disclosureClosers.forEach((closeOutsideViewport) => closeOutsideViewport());
     }
     if (isHome) {
       header.classList.toggle("is-visible", window.scrollY > 32 || header.contains(document.activeElement));
@@ -57,9 +57,9 @@
   });
   updateProgress();
 
-  document.querySelectorAll(".project-details").forEach((detail) => {
+  document.querySelectorAll(".disclosure-details").forEach((detail) => {
     const summary = detail.querySelector("summary");
-    const body = detail.querySelector(".project-body");
+    const body = detail.querySelector(".disclosure-body");
     if (!summary || !body) {
       return;
     }
@@ -88,11 +88,11 @@
       scheduleProgress();
     };
 
-    projectClosers.push(() => {
+    disclosureClosers.push(() => {
       if (!detail.open) {
         return;
       }
-      const card = detail.closest(".project-card");
+      const card = detail.closest(".disclosure-card");
       const bounds = card.getBoundingClientRect();
       const aboveViewport = bounds.bottom <= header.getBoundingClientRect().height;
       if (!aboveViewport && bounds.top < window.innerHeight) {
@@ -102,7 +102,7 @@
       targetOpen = false;
       finishExpansion();
       if (aboveViewport) {
-        // Preserve the position of the content being read below this project.
+        // Preserve the position of the content being read below this card.
         const removedHeight = bounds.height - card.getBoundingClientRect().height;
         window.scrollTo({ top: Math.max(0, scrollBefore - removedHeight), behavior: "instant" });
       }

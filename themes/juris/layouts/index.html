@@ -35,7 +35,7 @@
       <p>{{ $portfolio.projectIntro }}</p>
       <a class="text-link" href="#career">Continue to the journey <span aria-hidden="true">↓</span></a>
     </div>
-    <div class="project-stack">
+    <div class="disclosure-stack">
       {{ $projects := slice }}
       {{ range $portfolio.projects }}
         {{ $item := . }}
@@ -47,19 +47,19 @@
         {{ $item := $project.metadata }}
         {{ with $project.page }}
           {{ $id := printf "project-%s" (.Title | urlize) }}
-          <article id="{{ $id }}" class="project-card" data-reveal>
+          <article id="{{ $id }}" class="project-card disclosure-card" data-reveal>
             <div class="project-meta">
               <span>{{ $item.label }}</span
               ><span>{{ printf "%02d" (add $index 1) }} / {{ .Date.Format "2006" }}</span>
             </div>
             <h3>{{ .Title }}</h3>
             <p>{{ $item.description }}</p>
-            <details class="project-details">
-              <summary class="project-action" aria-label="Explore this project: {{ .Title }}">
+            <details class="disclosure-details">
+              <summary class="disclosure-action" aria-label="Explore this project: {{ .Title }}">
                 <span class="action-label">Explore this project</span>
                 <span class="detail-toggle" aria-hidden="true"></span>
               </summary>
-              <div class="project-body">
+              <div class="disclosure-body">
                 <div class="prose">
                   {{ .Content | replaceRE `id="([^"]+)"` (printf `id="%s-$1"` $id) | replaceRE `href="#([^"]+)"` (printf `href="#%s-$1"` $id) | safeHTML }}
                 </div>
@@ -72,16 +72,14 @@
   </section>
 
   <section id="career" class="journey-section section-space" aria-labelledby="journey-heading">
-    <div class="container">
-      <div class="journey-heading" data-reveal>
-        <div>
-          <p class="eyebrow">02 / The journey</p>
-          <h2 id="journey-heading">Built on experience.<br><em>Driven by curiosity.</em></h2>
-        </div>
+    <div class="journey-layout container">
+      <div class="section-intro" data-reveal>
+        <p class="eyebrow">02 / The journey</p>
+        <h2 id="journey-heading">Built on experience.<br><em>Driven by curiosity.</em></h2>
         <a class="text-link" href="#education">Where it all started <span aria-hidden="true">↓</span></a>
       </div>
       {{ with .Site.GetPage "/career" }}
-        <div class="prose journey-content">
+        <div class="journey-content">
           {{ .Content | replaceRE `id="([^"]+)"` `id="career-content-$1"` | replaceRE `<h2([^>]*)>` `<h3$1>` | replaceRE `</h2>` `</h3>` | safeHTML }}
         </div>
       {{ end }}
@@ -99,7 +97,7 @@
       <a class="text-link" href="#contact">Let’s connect <span aria-hidden="true">↓</span></a>
     </div>
     {{ with .Site.GetPage "/education" }}
-      <div class="prose education-content">
+      <div class="education-content">
         {{ .Content | replaceRE `id="([^"]+)"` `id="education-content-$1"` | replaceRE `<h2([^>]*)>` `<h3$1>` | replaceRE `</h2>` `</h3>` | safeHTML }}
       </div>
     {{ end }}

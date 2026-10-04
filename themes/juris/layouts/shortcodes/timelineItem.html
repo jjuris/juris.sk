@@ -1,14 +1,22 @@
-{{ $body := .Inner }}
-{{ range .Page.Resources }}
-  {{ if eq .ResourceType "image" }}
-    {{ $body = replace $body (printf `src="%s"` .Name) (printf `src="%s" width="%d" height="%d" alt="" loading="lazy" decoding="async"` .RelPermalink .Width .Height) }}
-  {{ end }}
-{{ end }}
-<li class="timeline-item" data-reveal>
-  <div class="timeline-date">{{ .Get "badge" }}</div>
-  <div class="timeline-content">
-    <h2>{{ .Get "header" }}</h2>
-    {{ with .Get "subheader" }}<p class="eyebrow">{{ . }}</p>{{ end }}
-    <div>{{ if .Get "md" }}{{ $body | markdownify }}{{ else }}{{ $body | safeHTML }}{{ end }}</div>
-  </div>
+{{ $title := .Get "header" }}
+{{ $action := "Explore this experience" }}
+{{ if eq (lower .Page.Path) "/education" }}{{ $action = "Explore this education" }}{{ end }}
+<li class="disclosure-card" data-reveal>
+  <div class="project-meta"><span>{{ .Get "subheader" }}</span><span>{{ .Get "badge" }}</span></div>
+  <h2>{{ $title }}</h2>
+  <details class="disclosure-details">
+    <summary class="disclosure-action" aria-label="{{ $action }}: {{ $title }}">
+      <span class="action-label">{{ $action }}</span>
+      <span class="detail-toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="disclosure-body">
+      <div class="prose">
+        {{ if .Get "md" }}
+          {{ .Inner | markdownify }}
+        {{ else }}
+          <p>{{ .Inner | safeHTML }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </details>
 </li>
