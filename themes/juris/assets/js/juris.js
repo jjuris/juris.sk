@@ -3,6 +3,7 @@
   const progress = document.querySelector(".reading-progress");
   const header = document.querySelector(".site-header");
   const isHome = document.body.classList.contains("is-home");
+  const contact = isHome ? document.getElementById("contact") : null;
   const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
   const sections = sectionLinks
     .map((link) => document.getElementById(link.dataset.sectionLink))
@@ -16,7 +17,11 @@
       disclosureClosers.forEach((closeOutsideViewport) => closeOutsideViewport());
     }
     if (isHome) {
-      header.classList.toggle("is-visible", window.scrollY > 32 || header.contains(document.activeElement));
+      const atContact = contact && contact.getBoundingClientRect().top <= 1;
+      header.classList.toggle(
+        "is-visible",
+        !atContact && (window.scrollY > 32 || header.contains(document.activeElement)),
+      );
     }
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const fraction = height > 0 ? Math.min(1, Math.max(0, window.scrollY / height)) : 0;
@@ -191,10 +196,11 @@
     cancelScroll();
     const start = window.scrollY;
     const headerHeight = header.getBoundingClientRect().height;
+    const anchorOffset = target === contact ? 0 : headerHeight + 24;
     const destination = Math.max(
       0,
       Math.min(
-        start + target.getBoundingClientRect().top - headerHeight - 24,
+        start + target.getBoundingClientRect().top - anchorOffset,
         document.documentElement.scrollHeight - window.innerHeight,
       ),
     );

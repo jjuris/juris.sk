@@ -32,6 +32,8 @@ viewport. Closing a card above the viewport preserves the reader's position.
 The opening screen fills the viewport with the introduction. The homepage
 header appears after scrolling down and hides again at the top; projects begin
 below the opening screen. With JavaScript disabled the header stays available.
+The contact section fills the final viewport, with its content centered and the
+footer at the bottom. The header hides on arrival and returns when scrolling up.
 The menu links to homepage sections, with deliberate 1–2.2 second transitions;
 wheel and touch scrolling remain native and can interrupt a transition.
 Existing detail URLs still work for incoming links.
