@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <title>{{ if not .IsHome }}{{ .Title }} ·{{ end }}{{ .Site.Title }}</title>
     {{ $description := .Description | default .Site.Language.Params.description }}
     <meta name="description" content="{{ $description }}">
@@ -23,7 +26,7 @@
     <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
     {{ partial "extend-head.html" . }}
   </head>
-  <body>
+  <body class="{{ if .IsHome }}is-home{{ end }}">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="reading-progress" aria-hidden="true"></div>
     {{ partial "header.html" . }}

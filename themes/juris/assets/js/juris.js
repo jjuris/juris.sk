@@ -1,6 +1,8 @@
 (() => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const progress = document.querySelector(".reading-progress");
+  const header = document.querySelector(".site-header");
+  const isHome = document.body.classList.contains("is-home");
   const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
   const sections = sectionLinks
     .map((link) => document.getElementById(link.dataset.sectionLink))
@@ -9,6 +11,9 @@
   let scrollAnimation = null;
 
   const updateProgress = () => {
+    if (isHome) {
+      header.classList.toggle("is-visible", window.scrollY > 32 || header.contains(document.activeElement));
+    }
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const fraction = height > 0 ? Math.min(1, Math.max(0, window.scrollY / height)) : 0;
     if (progress) {
@@ -40,6 +45,9 @@
   window.addEventListener("scroll", scheduleProgress, { passive: true });
   window.addEventListener("resize", scheduleProgress);
   window.addEventListener("load", scheduleProgress);
+  window.addEventListener("pageshow", scheduleProgress);
+  header.addEventListener("focusin", scheduleProgress);
+  header.addEventListener("focusout", scheduleProgress);
   document.querySelectorAll("details").forEach((detail) => {
     detail.addEventListener("toggle", scheduleProgress);
   });
@@ -81,7 +89,7 @@
     event.preventDefault();
     cancelScroll();
     const start = window.scrollY;
-    const headerHeight = document.querySelector(".site-header").getBoundingClientRect().height;
+    const headerHeight = header.getBoundingClientRect().height;
     const destination = Math.max(
       0,
       Math.min(

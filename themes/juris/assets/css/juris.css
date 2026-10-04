@@ -90,6 +90,25 @@ a:focus-visible {
   border-bottom: 1px solid var(--line);
   background: var(--paper);
 }
+.is-home .site-header {
+  position: fixed;
+  inset: 0 0 auto;
+}
+.js .is-home .site-header {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 0s 300ms;
+}
+.js .is-home .site-header.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
 .header-inner {
   display: flex;
   justify-content: space-between;
@@ -151,7 +170,14 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 40px;
-  padding-top: 92px;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: clamp(64px, 10svh, 110px);
+  padding-bottom: 24px;
+}
+html:not(.js) .is-home .hero {
+  padding-top: 140px;
 }
 .hero-copy {
   align-self: center;
@@ -216,10 +242,12 @@ em {
 .hero-portrait {
   position: relative;
   margin: 0 0 0 26px;
+  align-self: center;
 }
 .hero-portrait img {
   width: 100%;
   aspect-ratio: 0.93;
+  max-height: 60svh;
   object-fit: cover;
   object-position: 50% 50%;
   border-radius: 2px;
@@ -249,7 +277,7 @@ em {
   justify-content: space-between;
   grid-column: 1 / -1;
   gap: 24px;
-  margin-top: 32px;
+  margin-top: 0;
   padding-block: 22px;
   border-block: 1px solid var(--line);
   color: var(--muted);
@@ -635,11 +663,6 @@ h2 {
   transform: none;
 }
 
-@media (min-width: 1440px) {
-  .hero {
-    padding-top: 110px;
-  }
-}
 @media (max-width: 1000px) {
   .container {
     width: calc(100% - 64px);
@@ -706,8 +729,9 @@ h2 {
   }
   .hero {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
     padding-top: 44px;
-    gap: 32px;
+    gap: 24px;
   }
   .hero h1 {
     font-size: clamp(40px, 8.5vw, 58px);
@@ -721,11 +745,14 @@ h2 {
     font-size: 16px;
   }
   .hero-portrait {
-    margin: 4px 0 0 16px;
-    max-width: 460px;
+    margin: 4px 0 0;
+    width: min(100% - 16px, 300px);
+    justify-self: center;
   }
   .hero-portrait img {
     aspect-ratio: 1.2;
+    max-height: 30svh;
+    object-position: 50% 35%;
   }
   .portrait-mark {
     left: -16px;
@@ -825,11 +852,26 @@ h2 {
   }
 }
 @media (max-width: 380px) {
+  .hero {
+    gap: 20px;
+  }
+  .hero h1 {
+    font-size: 36px;
+    margin-top: 20px;
+  }
+  .hero-intro {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .hero-portrait {
+    width: min(100% - 16px, 240px);
+  }
   .career-preview {
     grid-template-columns: 1fr;
   }
   .hero-actions {
     gap: 14px;
+    margin-top: 24px;
   }
   .hero-bottom {
     flex-direction: column;

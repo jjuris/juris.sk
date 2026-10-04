@@ -21,6 +21,9 @@ The previous Blowfish submodule is retained, but the active theme is `juris`.
 All seven projects, the complete career timeline, education, and contact are on
 the homepage. Projects are automatically sorted by their content dates, newest
 first. Native disclosure controls open full project articles inline.
+The opening screen fills the viewport with the introduction. The homepage
+header appears after scrolling down and hides again at the top; projects begin
+below the opening screen. With JavaScript disabled the header stays available.
 The menu links to homepage sections, with deliberate 1–2.2 second transitions;
 wheel and touch scrolling remain native and can interrupt a transition.
 Existing detail URLs still work for incoming links.
