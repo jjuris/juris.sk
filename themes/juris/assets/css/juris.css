@@ -244,7 +244,7 @@ em {
   margin: 0 0 0 26px;
   align-self: center;
 }
-.hero-portrait img {
+.hero-portrait > img {
   width: 100%;
   aspect-ratio: 0.93;
   max-height: 60svh;
@@ -265,12 +265,19 @@ em {
   left: -27px;
   bottom: 64px;
   background: var(--blue);
-  color: var(--paper);
-  padding: 14px 18px;
-  font-family: var(--serif);
-  font-size: 34px;
-  font-style: italic;
-  line-height: 1;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+}
+.portrait-mark img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: 1;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 .hero-bottom {
   display: flex;
@@ -749,7 +756,7 @@ h2 {
     width: min(100% - 16px, 300px);
     justify-self: center;
   }
-  .hero-portrait img {
+  .hero-portrait > img {
     aspect-ratio: 1.2;
     max-height: 30svh;
     object-position: 50% 35%;
@@ -757,7 +764,8 @@ h2 {
   .portrait-mark {
     left: -16px;
     bottom: 45px;
-    font-size: 27px;
+    width: 64px;
+    height: 64px;
   }
   .hero-bottom {
     margin-top: 0;
