@@ -242,6 +242,13 @@ em {
   color: var(--blue);
   border-color: var(--blue);
 }
+.arrow-icon {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  vertical-align: -0.18em;
+}
 .hero-portrait {
   position: relative;
   margin: 0 0 0 26px;
