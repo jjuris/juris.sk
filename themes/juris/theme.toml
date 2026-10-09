@@ -1,0 +1,7 @@
+name = 'Juris'
+license = 'MIT'
+description = 'An editorial portfolio with cream surfaces, ink typography, and blue accents.'
+min_version = '0.152.2'
+
+[author]
+name = 'Jozef Juris'

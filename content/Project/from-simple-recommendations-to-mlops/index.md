@@ -3,8 +3,6 @@ title: From Simple Recommendations to MLOps
 date: 2021-01-01
 ---
 
-![](featured.webp)
-
 
 ### Background
 At the beginning of our recommendation system’s development, we used simple algorithms focused on popularity, trending topics, and readership metrics. These early methods were easy to implement and produced acceptable results. However, as the user base and content volume grew, it became clear that automated content recommendations were far more effective in engaging users than editorial selection. This realization led us toward building a data-driven recommendation system powered by modern machine learning techniques.

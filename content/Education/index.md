@@ -1,10 +1,9 @@
 ---
+title: "Education"
 weight: 4
 ---
 
 ## EDUCATION
-
-![](featured-library.png)
 
 {{< timeline >}}
 

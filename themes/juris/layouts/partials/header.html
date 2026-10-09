@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="wordmark" href="{{ .Site.Home.RelPermalink }}" aria-label="Jozef Juris — home"
+      >Jozef Juris<span>.</span></a
+    >
+    <nav aria-label="Main navigation">
+      {{ range .Site.Menus.main }}
+        {{ if .Name }}
+          {{ $anchors := dict "Projects" "work" "Career" "career" "Education" "education" "Contact" "contact" }}
+          {{ $anchor := index $anchors .Name }}
+          {{ $url := .URL }}
+          {{ if $anchor }}
+            {{ $url = printf "%s#%s" $.Site.Home.RelPermalink $anchor }}
+            {{ if $.IsHome }}{{ $url = printf "#%s" $anchor }}{{ end }}
+          {{ end }}
+          <a href="{{ $url }}" {{ with $anchor }}data-section-link="{{ . }}"{{ end }}>{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+  </div>
+</header>

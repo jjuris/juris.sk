@@ -1,0 +1,22 @@
+{{ $title := .Get "header" }}
+{{ $action := "Explore this experience" }}
+{{ if eq (lower .Page.Path) "/education" }}{{ $action = "Explore this education" }}{{ end }}
+<li class="disclosure-card" data-reveal>
+  <div class="project-meta"><span>{{ .Get "subheader" }}</span><span>{{ .Get "badge" }}</span></div>
+  <h2>{{ $title }}</h2>
+  <details class="disclosure-details">
+    <summary class="disclosure-action" aria-label="{{ $action }}: {{ $title }}">
+      <span class="action-label">{{ $action }}</span>
+      <span class="detail-toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="disclosure-body">
+      <div class="prose">
+        {{ if .Get "md" }}
+          {{ .Inner | markdownify }}
+        {{ else }}
+          <p>{{ .Inner | safeHTML }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </details>
+</li>

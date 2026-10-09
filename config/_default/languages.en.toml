@@ -9,9 +9,9 @@ displayName = "EN"
 isoCode = "en"
 rtl = false
 dateFormat = "2 January 2006"
-description = ""
+description = "Infrastructure & Platform Engineer. Projects, experience, and the thinking behind reliable systems."
 
-["params.author"]
+[params.author]
 headline = """
 
 [Discover how I became an](/education)

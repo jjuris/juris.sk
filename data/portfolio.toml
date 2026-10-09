@@ -1,0 +1,41 @@
+eyebrow = "Infrastructure & Platform Engineer"
+heading = "Complex systems."
+headingAccent = "Clear thinking."
+intro = "I’m Jozef Juris. I bring infrastructure, software, and people together to turn ideas into systems that work."
+email = "jozef@juris.sk"
+projectIntro = "From a first Kubernetes migration to platforms for machine learning. A few chapters in an ongoing journey of making technology work better."
+
+[[projects]]
+path = "/project/from-simple-recommendations-to-mlops"
+label = "Machine learning infrastructure"
+description = "From simple recommendation algorithms to an automated lifecycle for training and serving models."
+
+[[projects]]
+path = "/project/migration-to-kubernetes"
+label = "Infrastructure & orchestration"
+description = "Moving from manual deployments to containers, automated scheduling, and a more flexible infrastructure."
+
+[[projects]]
+path = "/project/cue-templating"
+label = "Configuration & developer tooling"
+description = "Exploring CUE templating as part of the platform engineering toolkit."
+
+[[projects]]
+path = "/project/personal-development-space"
+label = "Developer experience"
+description = "A personal development environment built around the way I work."
+
+[[projects]]
+path = "/project/self-service-deployment-into-the-production"
+label = "Delivery & team autonomy"
+description = "Giving developers ownership of production deployments through Kubernetes, CI/CD, and GitOps."
+
+[[projects]]
+path = "/project/help-desk-migration"
+label = "Service management"
+description = "An end-to-end migration of a help desk solution for the Czech Police."
+
+[[projects]]
+path = "/project/museums-and-galleries-information-terminal-network"
+label = "Networks & public spaces"
+description = "Building a secure network of information terminals for museums and galleries in Vysočina."

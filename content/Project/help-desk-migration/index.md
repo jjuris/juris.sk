@@ -3,8 +3,6 @@ title: "Help Desk Migration for Czech Police"
 date: 2015-10-01
 ---
 
-![](featured.jpeg)
-
 ## Project Overview
 The primary task was to migrate processes and data from HP OpenView Service Desk to the new HP Service Manager software for Czech Police.
 My role involved leading the design and the migration, ensuring minimal disruption to police operations. I completed the project on time,

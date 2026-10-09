@@ -5,7 +5,7 @@ none = "none"
 name = "Education"
 pageRef = "Education"
 identifier = "FBHVWro6J1"
-weight = 1
+weight = 3
 
 [[main]]
 name = "Career"
@@ -17,7 +17,7 @@ weight = 2
 name = "Projects"
 pageRef = "Projects"
 identifier = "wBsj54FCMm"
-weight = 3
+weight = 1
 
 [[main]]
 name = "Contact"
