@@ -1,9 +1,11 @@
 ---
 title: "Education"
+description: >-
+  Jozef Juris's educational background in mathematics, informatics, and project
+  management, with studies in Košice and Prague.
+lastmod: 2026-10-09
 weight: 4
 ---
-
-## EDUCATION
 
 {{< timeline >}}
 
@@ -12,7 +14,7 @@ At <a href="https://www.galeje.sk" target="_blank">Alejová</a>, I discovered th
 {{< /timelineItem >}}
 
 {{< timelineItem icon="school-solid-full" header="Pavol Jozef Šafárik University" badge="2006 – 2008" subheader="Košice, Slovakia" >}}
-During my time at the <a href="https://www.upjs.sk)" target="_blank">university</a>, I found a way to transform the abstract beauty of mathematics into something practical — communication with machines. Informatics turned numbers into code, and logic into functionality. It was here that problem-solving evolved from a personal challenge to a creative process of building tools that could think alongside me.
+During my time at the <a href="https://www.upjs.sk/" target="_blank">university</a>, I found a way to transform the abstract beauty of mathematics into something practical — communication with machines. Informatics turned numbers into code, and logic into functionality. It was here that problem-solving evolved from a personal challenge to a creative process of building tools that could think alongside me.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="school-solid-full" header="Unicorn College" badge="2014 – 2016" subheader="Prague, Czech Republic" >}}

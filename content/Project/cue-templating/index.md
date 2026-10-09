@@ -1,5 +1,9 @@
 ---
 title: "CUE templating"
+description: >-
+  How Jozef Juris's team uses CUE to generate and validate CI pipelines,
+  Dockerfiles, and Kubernetes configurations across a growing monorepo.
+lastmod: 2026-10-09
 date: 2025-04-01
 draft: false
 ---

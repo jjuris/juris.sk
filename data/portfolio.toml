@@ -3,6 +3,8 @@ heading = "Complex systems."
 headingAccent = "Clear thinking."
 intro = "I’m Jozef Juris. I bring infrastructure, software, and people together to turn ideas into systems that work."
 email = "jozef@juris.sk"
+github = "https://github.com/jjuris"
+blog = "https://www.jozefjuris.sk/"
 projectIntro = "From a first Kubernetes migration to platforms for machine learning. A few chapters in an ongoing journey of making technology work better."
 
 [[projects]]

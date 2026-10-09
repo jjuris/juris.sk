@@ -1,0 +1,76 @@
+{{- $meta := partial "seo-meta.html" . -}}
+{{- if not $meta.noindex -}}
+  {{- $home := .Site.Home.Permalink -}}
+  {{- $personID := printf "%s#person" $home -}}
+  {{- $websiteID := printf "%s#website" $home -}}
+  {{- $pageID := printf "%s#webpage" $meta.canonical -}}
+  {{- $portfolio := .Site.Data.portfolio -}}
+  {{- $person := dict
+    "@type" "Person"
+    "@id" $personID
+    "name" .Site.Title
+    "url" $home
+    "jobTitle" $portfolio.eyebrow
+    "description" .Site.Home.Description
+    "sameAs" (slice $portfolio.github $portfolio.blog)
+  -}}
+  {{- with resources.Get "portrait.png" -}}
+    {{- $person = merge $person (dict "image" .Permalink) -}}
+  {{- end -}}
+  {{- $website := dict
+    "@type" "WebSite"
+    "@id" $websiteID
+    "url" $home
+    "name" .Site.Title
+    "inLanguage" .Site.Language.Params.isoCode
+    "publisher" (dict "@id" $personID)
+  -}}
+  {{- $pageType := "WebPage" -}}
+  {{- if .IsHome -}}{{- $pageType = "ProfilePage" -}}{{- end -}}
+  {{- $page := dict
+    "@type" $pageType
+    "@id" $pageID
+    "url" $meta.canonical
+    "name" $meta.title
+    "description" $meta.description
+    "inLanguage" .Site.Language.Params.isoCode
+    "isPartOf" (dict "@id" $websiteID)
+  -}}
+  {{- with .Params.lastmod -}}
+    {{- $page = merge $page (dict "dateModified" ($.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- end -}}
+  {{- $graph := slice $person $website -}}
+  {{- if .IsHome -}}
+    {{- $page = merge $page (dict "mainEntity" (dict "@id" $personID)) -}}
+    {{- $projects := slice -}}
+    {{- range $portfolio.projects -}}
+      {{- with $.Site.GetPage .path -}}
+        {{- $projects = $projects | append (dict "@type" "CreativeWork" "name" .Title "url" .Permalink "author" (dict "@id" $personID)) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $page = merge $page (dict "hasPart" $projects) -}}
+  {{- else if and .IsPage (eq (lower .Section) "project") -}}
+    {{- $projectID := printf "%s#project" $meta.canonical -}}
+    {{- $project := dict
+      "@type" "CreativeWork"
+      "@id" $projectID
+      "name" .Title
+      "description" $meta.description
+      "url" $meta.canonical
+      "author" (dict "@id" $personID)
+      "mainEntityOfPage" (dict "@id" $pageID)
+      "inLanguage" .Site.Language.Params.isoCode
+    -}}
+    {{- with $meta.image -}}
+      {{- $project = merge $project (dict "image" .Permalink) -}}
+    {{- end -}}
+    {{- $graph = $graph | append $project -}}
+    {{- $page = merge $page (dict "mainEntity" (dict "@id" $projectID)) -}}
+  {{- else if eq (lower .Path) "/projects" -}}
+    {{- $page = merge $page (dict "@type" "CollectionPage") -}}
+  {{- else -}}
+    {{- $page = merge $page (dict "about" (dict "@id" $personID)) -}}
+  {{- end -}}
+  {{- $graph = $graph | append $page -}}
+  <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>
+{{- end -}}

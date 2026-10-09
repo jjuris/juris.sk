@@ -1,5 +1,9 @@
 ---
 title: "Migration to Kubernetes"
+description: >-
+  Moving services from Debian packages and manual deployments to Docker,
+  Kubernetes scheduling, and environment-based configuration.
+lastmod: 2026-10-09
 date: 2019-06-01
 ---
 

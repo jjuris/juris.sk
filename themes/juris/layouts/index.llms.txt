@@ -1,0 +1,22 @@
+# {{ .Site.Title }}
+
+> {{ .Description }}
+
+{{ .Site.Data.portfolio.intro }}
+
+## Profile
+
+- [Portfolio]({{ .Permalink }}): {{ .Site.Data.portfolio.eyebrow }}.
+{{ range slice "/career" "/education" "/contact" }}{{ with $.Site.GetPage . }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{ end }}{{ end }}
+## Projects
+
+{{ with .Site.GetPage "/projects" }}- [All projects]({{ .Permalink }}): {{ .Description }}
+{{ end }}{{ range .Site.Data.portfolio.projects }}{{ with $.Site.GetPage .path }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{ end }}{{ end }}
+## Other profiles
+
+- [GitHub]({{ .Site.Data.portfolio.github }})
+- [Blog]({{ .Site.Data.portfolio.blog }})

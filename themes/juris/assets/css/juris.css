@@ -532,6 +532,12 @@ h2 {
 .contact-section:focus {
   outline: none;
 }
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
 .contact-email {
   display: flex;
   align-items: center;

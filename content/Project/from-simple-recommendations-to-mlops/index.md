@@ -1,5 +1,9 @@
 ---
 title: From Simple Recommendations to MLOps
+description: >-
+  A recommendation platform's evolution from simple algorithms to MLOps,
+  with Consul, Terraform, and Kubernetes automating training and serving.
+lastmod: 2026-10-09
 date: 2021-01-01
 ---
 

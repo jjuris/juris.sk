@@ -1,5 +1,9 @@
 ---
 title: "Self-service deployment into the production"
+description: >-
+  Giving developers ownership of production deployments through Kubernetes,
+  CI/CD, Argo CD, GitOps, and shared responsibility for on-call operations.
+lastmod: 2026-10-09
 date: 2020-01-01
 draft: false
 ---
@@ -15,7 +19,7 @@ deployment rights—shifting mindsets from gatekeeping to collaboration.
 
 ## CI/CD Pipeline Evolution
 Initially, we adapted our CI/CD with an internal tool that generated Kubernetes manifests for web-based deployment. Today, ArgoCD handles this seamlessly via GitOps, syncing changes
-declaratively and reducing errors. This upgrade cut deployment times dramatically, much like cases where teams saw 90% faster releases.
+declaratively and reducing errors. This upgrade shortened deployment times and reduced manual work.
 
 ## Developer Ownership and On-Call Impact
 Our team now holds production on-call because no one understands our product better than its builders. Reliable production quality means each weekly rotator gets financial compensation

@@ -1,10 +1,11 @@
 ---
 title: "Career"
+description: >-
+  Jozef Juris's career from enterprise IT and service management to DevOps,
+  Kubernetes, site reliability, and infrastructure and platform engineering.
+lastmod: 2026-10-09
 weight: 3
 ---
-
-# Career
-
 
 {{< timeline >}}
 

@@ -1,0 +1,29 @@
+{{- $title := printf "%s · %s" .Title .Site.Title -}}
+{{- if .IsHome -}}
+  {{- $title = .Site.Title -}}
+{{- end -}}
+{{- $title = .Params.seotitle | default $title -}}
+{{- $description := .Description | default .Site.Language.Params.description -}}
+{{- $canonical := .Permalink -}}
+{{- with .Params.canonicalpage -}}
+  {{- with $.Site.GetPage . -}}
+    {{- $canonical = .Permalink -}}
+  {{- end -}}
+{{- end -}}
+{{- $noindex := or .Params.noindex (in (slice "taxonomy" "term" "404") .Kind) -}}
+{{- $image := resources.Get "portrait.png" -}}
+{{- $imageAlt := printf "Portrait of %s" .Site.Title -}}
+{{- if eq (lower .Section) "project" -}}
+  {{- with .Resources.GetMatch "featured*" -}}
+    {{- $image = . -}}
+    {{- $imageAlt = $.Title -}}
+  {{- end -}}
+{{- end -}}
+{{- with $image -}}
+  {{- if gt .Width 1200 -}}
+    {{- $image = .Resize "1200x webp" -}}
+  {{- else -}}
+    {{- $image = .Process "webp" -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "title" $title "description" $description "canonical" $canonical "noindex" $noindex "image" $image "imageAlt" $imageAlt) -}}
