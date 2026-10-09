@@ -1,5 +1,9 @@
 ---
 title: "Projects"
+description: >-
+  Explore Jozef Juris's first-hand projects in Kubernetes, CUE configuration,
+  infrastructure automation, MLOps, and service management.
+lastmod: 2026-10-09
 weight: 2
 ---
 

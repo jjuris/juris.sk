@@ -1,5 +1,9 @@
 ---
 title: "Personal development space"
+description: >-
+  Using Terraform, OpenStack, and Ansible to automate development environments
+  for researchers and developers across more than 50 virtual machines.
+lastmod: 2026-10-09
 date: 2022-01-01
 ---
 

@@ -1,5 +1,9 @@
 ---
 title: Secure Kiosk Network for Vysocina Museums and Galleries
+description: >-
+  Deploying 47 museum and gallery information kiosks in Vysočina, with
+  MikroTik VPN networking, remote management, monitoring, and recovery.
+lastmod: 2026-10-09
 date: 2013-12-11
 ---
 
@@ -19,5 +23,5 @@ Windows PC with [SiteKiosk](www.sitekiosk.com) provided terminal lockdown and ce
 plus a device for temp/humidity monitoring and remote power cycling. Kiosks acted as LAN clients.
 
 ## Results & Lessons
-All 47 kiosks went live that summer and run reliably today. Automation cut deploy time and mitigated configuration errors. Key takeaway: script early for edge infra.
+All 47 kiosks went live in summer 2013. Automation cut deploy time and mitigated configuration errors. Key takeaway: script early for edge infra.
 This honed my DevOps skills for remote resilience.

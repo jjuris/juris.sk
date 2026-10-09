@@ -6,17 +6,30 @@
     <script>
       document.documentElement.classList.add("js");
     </script>
-    <title>{{ if not .IsHome }}{{ .Title }} ·{{ end }}{{ .Site.Title }}</title>
-    {{ $description := .Description | default .Site.Language.Params.description }}
-    <meta name="description" content="{{ $description }}">
+    {{ $meta := partial "seo-meta.html" . }}
+    <title>{{ $meta.title }}</title>
+    <meta name="description" content="{{ $meta.description }}">
+    {{ if $meta.noindex }}<meta name="robots" content="noindex, follow">{{ end }}
     <meta name="theme-color" content="#f6f4ef">
-    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if ne .Kind "404" }}<link rel="canonical" href="{{ $meta.canonical }}">{{ end }}
     <link rel="icon" href="{{ "favicon.ico" | relURL }}">
-    <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} ·{{ end }}{{ .Site.Title }}">
-    <meta property="og:description" content="{{ $description }}">
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-    {{ with resources.Get "portrait.png" }}<meta property="og:image" content="{{ .Permalink }}">{{ end }}
+    <meta property="og:title" content="{{ $meta.title }}">
+    <meta property="og:description" content="{{ $meta.description }}">
+    <meta property="og:url" content="{{ $meta.canonical }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:type" content="{{ if and .IsPage (eq (lower .Section) "project") }}article{{ else }}website{{ end }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $meta.title }}">
+    <meta name="twitter:description" content="{{ $meta.description }}">
+    {{ with $meta.image }}
+      <meta property="og:image" content="{{ .Permalink }}">
+      <meta property="og:image:width" content="{{ .Width }}">
+      <meta property="og:image:height" content="{{ .Height }}">
+      <meta property="og:image:alt" content="{{ $meta.imageAlt }}">
+      <meta name="twitter:image" content="{{ .Permalink }}">
+      <meta name="twitter:image:alt" content="{{ $meta.imageAlt }}">
+    {{ end }}
+    {{ partial "structured-data.html" . }}
     {{ range .AlternativeOutputFormats }}
       <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
     {{ end }}

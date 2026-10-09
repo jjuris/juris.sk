@@ -1,5 +1,9 @@
 ---
 title: "Help Desk Migration for Czech Police"
+description: >-
+  Jozef Juris's end-to-end migration from HP OpenView Service Desk to
+  HP Service Manager for the Czech Police, covering data, workflows, and users.
+lastmod: 2026-10-09
 date: 2015-10-01
 ---
 

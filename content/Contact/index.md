@@ -1,8 +1,14 @@
 ---
 title: "Contact"
+description: >-
+  Contact Jozef Juris, Infrastructure & Platform Engineer. Find his email,
+  GitHub profile, and personal blog.
+lastmod: 2026-10-09
 weight: 1
 ---
 
-# Contact
+I'm Jozef Juris, an Infrastructure & Platform Engineer working across Kubernetes,
+infrastructure automation, developer tooling, and machine learning platforms.
 
-If you are viewing this page, you most likely already have my contact details. However, should you need to reach me, please feel free to send an email to jozef@juris.sk.
+You can reach me at [jozef@juris.sk](mailto:jozef@juris.sk), explore my work on
+[GitHub](https://github.com/jjuris), or read my [blog](https://www.jozefjuris.sk/).

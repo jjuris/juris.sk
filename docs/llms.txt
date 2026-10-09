@@ -1,0 +1,38 @@
+# Jozef Juris
+
+> Jozef Juris, Infrastructure & Platform Engineer. First-hand projects in Kubernetes, platform engineering, infrastructure automation, and MLOps.
+
+I’m Jozef Juris. I bring infrastructure, software, and people together to turn ideas into systems that work.
+
+## Profile
+
+- [Portfolio](https://juris.sk/): Infrastructure & Platform Engineer.
+
+- [Career](https://juris.sk/career/): Jozef Juris's career from enterprise IT and service management to DevOps, Kubernetes, site reliability, and infrastructure and platform engineering.
+
+- [Education](https://juris.sk/education/): Jozef Juris's educational background in mathematics, informatics, and project management, with studies in Košice and Prague.
+
+- [Contact](https://juris.sk/contact/): Contact Jozef Juris, Infrastructure & Platform Engineer. Find his email, GitHub profile, and personal blog.
+
+## Projects
+
+- [All projects](https://juris.sk/projects/): Explore Jozef Juris's first-hand projects in Kubernetes, CUE configuration, infrastructure automation, MLOps, and service management.
+
+- [From Simple Recommendations to MLOps](https://juris.sk/project/from-simple-recommendations-to-mlops/): A recommendation platform's evolution from simple algorithms to MLOps, with Consul, Terraform, and Kubernetes automating training and serving.
+
+- [Migration to Kubernetes](https://juris.sk/project/migration-to-kubernetes/): Moving services from Debian packages and manual deployments to Docker, Kubernetes scheduling, and environment-based configuration.
+
+- [CUE templating](https://juris.sk/project/cue-templating/): How Jozef Juris's team uses CUE to generate and validate CI pipelines, Dockerfiles, and Kubernetes configurations across a growing monorepo.
+
+- [Personal development space](https://juris.sk/project/personal-development-space/): Using Terraform, OpenStack, and Ansible to automate development environments for researchers and developers across more than 50 virtual machines.
+
+- [Self-service deployment into the production](https://juris.sk/project/self-service-deployment-into-the-production/): Giving developers ownership of production deployments through Kubernetes, CI/CD, Argo CD, GitOps, and shared responsibility for on-call operations.
+
+- [Help Desk Migration for Czech Police](https://juris.sk/project/help-desk-migration/): Jozef Juris's end-to-end migration from HP OpenView Service Desk to HP Service Manager for the Czech Police, covering data, workflows, and users.
+
+- [Secure Kiosk Network for Vysocina Museums and Galleries](https://juris.sk/project/museums-and-galleries-information-terminal-network/): Deploying 47 museum and gallery information kiosks in Vysočina, with MikroTik VPN networking, remote management, monitoring, and recovery.
+
+## Other profiles
+
+- [GitHub](https://github.com/jjuris)
+- [Blog](https://www.jozefjuris.sk/)

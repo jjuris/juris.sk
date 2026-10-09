@@ -86,9 +86,6 @@ cardView = false
 cardViewScreenWidth = false
 constrainItemsWidth = false
 
-[sitemap]
-excludedKinds = [ "taxonomy", "term" ]
-
 [taxonomy]
 showTermCount = true
 showHero = false

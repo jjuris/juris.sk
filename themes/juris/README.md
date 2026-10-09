@@ -38,6 +38,10 @@ The menu links to homepage sections, with deliberate 1–2.2 second transitions;
 wheel and touch scrolling remain native and can interrupt a transition.
 Existing detail URLs still work for incoming links.
 
+Project titles link to their individual case studies; the plus controls still
+expand the full text in place. Section labels link to the corresponding standalone
+pages while the main navigation retains its homepage anchors.
+
 Desktop introductions remain visible while their content scrolls.
 Mobile uses a single column. All content works without JavaScript; motion is
 disabled when the visitor requests reduced motion. GoatCounter continues to
@@ -48,3 +52,16 @@ For a build without changing generated output in the repository:
 ```sh
 hugo --minify --destination /tmp/juris-preview
 ```
+
+## SEO and machine-readable content
+
+The theme emits page-specific metadata, Open Graph and Twitter Cards, and a
+JSON-LD graph linking the person, website, profile, and project case studies.
+Descriptions and actual update dates live in content front matter. GitHub and
+blog URLs live in `data/portfolio.toml` and also populate the identity graph.
+
+Taxonomy archives and the secondary `/project/` overview remain available but are
+not indexed. The sitemap includes only the primary content pages. The optional
+`llms.txt` is generated from the same content rather than maintained separately.
+
+See [SEO.md](../../SEO.md) for validation, production export, and hosting checks.
