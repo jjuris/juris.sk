@@ -6,6 +6,7 @@
   --blue: #264fbe;
   --line: #d9dad5;
   --wash: #ebece6;
+  --header-height: 87px;
   --serif: Georgia, "Times New Roman", serif;
   --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
 }
@@ -15,7 +16,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px;
+  scroll-padding-top: var(--header-height);
 }
 body {
   margin: 0;
@@ -523,7 +524,7 @@ h2 {
   text-align: center;
   padding-block: 128px;
   /* Cancel the default anchor offset for the final full-screen section. */
-  scroll-margin-top: -120px;
+  scroll-margin-top: calc(-1 * var(--header-height));
 }
 .contact-section h2 {
   font-size: clamp(38px, 4.5vw, 64px);
@@ -716,6 +717,9 @@ h2 {
   }
 }
 @media (max-width: 700px) {
+  :root {
+    --header-height: 100px;
+  }
   .container {
     width: calc(100% - 40px);
   }

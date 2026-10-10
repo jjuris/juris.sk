@@ -2,6 +2,14 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const progress = document.querySelector(".reading-progress");
   const header = document.querySelector(".site-header");
+  const updateHeaderHeight = () => {
+    document.documentElement.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`);
+  };
+  updateHeaderHeight();
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(updateHeaderHeight).observe(header);
+  }
+  window.addEventListener("resize", updateHeaderHeight);
   const isHome = document.body.classList.contains("is-home");
   const contact = isHome ? document.getElementById("contact") : null;
   const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
@@ -196,7 +204,7 @@
     cancelScroll();
     const start = window.scrollY;
     const headerHeight = header.getBoundingClientRect().height;
-    const anchorOffset = target === contact ? 0 : headerHeight + 24;
+    const anchorOffset = target === contact ? 0 : headerHeight;
     const destination = Math.max(
       0,
       Math.min(
