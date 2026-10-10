@@ -54,7 +54,7 @@
               <span>{{ $item.label }}</span
               ><span>{{ printf "%02d" (add $index 1) }} / {{ .Date.Format "2006" }}</span>
             </div>
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <h3>{{ .Title }}</h3>
             <p>{{ $item.description }}</p>
             <details class="disclosure-details">
               <summary class="disclosure-action" aria-label="Explore this project: {{ .Title }}">
