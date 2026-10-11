@@ -54,6 +54,10 @@ a:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 6px;
 }
+/* Keep pointer-triggered anchor focus from outlining the whole content block. */
+.pointer-focus-target:focus {
+  outline: none;
+}
 .container {
   width: min(1200px, calc(100% - 112px));
   margin-inline: auto;
