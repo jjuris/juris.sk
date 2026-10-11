@@ -8,7 +8,7 @@ JavaScript, and preview images.
 ## Develop
 
 Run `hugo server` from the repository root. Build with `hugo --minify`.
-The previous Blowfish submodule is retained, but the active theme is `juris`.
+The theme is included directly in the repository and requires no submodules.
 
 ## Customize
 

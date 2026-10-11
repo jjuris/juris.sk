@@ -1,6 +1,6 @@
 # SEO and GEO maintenance
 
-The active theme is `juris`. SEO changes do not require a Blowfish npm build.
+The active theme is `juris`. Hugo builds its assets without an npm build step.
 The production base URL is `https://juris.sk/` in `hugo.toml`.
 
 ## Content and identity

@@ -4,20 +4,22 @@
 
 **Hugo Server (Development)**
 ```bash
-cd themes/blowfish && npm run dev  # Watch CSS in development mode
-hugo server                         # Start local Hugo server (default: :1313)
+hugo server  # Start local Hugo server (default: :1313)
 ```
 
 **Build for Production**
 ```bash
-cd themes/blowfish && npm run build  # Minify Tailwind CSS
-hugo                                 # Build static site
+hugo --minify  # Build static site
 ```
+
+The active theme is `juris`. Hugo processes its CSS, JavaScript, and images;
+no npm build step is required. See [SEO.md](SEO.md) for validation and export
+to `docs/` while preserving `docs/CNAME`.
 
 ## Code Style Guidelines
 
 ### Formatting & Linting
-- **Prettier** is configured for all file types
+- Follow the formatting conventions below; no Prettier configuration is bundled
 - **Print width**: 112 characters (HTML, JS/TS); default 80 (other)
 - **Indentation**: 2 spaces (no tabs)
 - **Quotes**: Double quotes for JavaScript/HTML; single quotes only in YAML
@@ -27,8 +29,8 @@ hugo                                 # Build static site
 ### Languages & File Types
 
 **HTML/Go Templates** (.html, .go-template)
-- Bracket spacing enabled (`goTemplateBracketSpacing: true`)
-- Void elements configured via `prettier-plugin-void-html`
+- Use spaces inside Go template delimiters
+- Use standard HTML void elements
 
 **JavaScript/TypeScript** (.js, .ts, .mjs, .mts)
 - 2 space indentation, 112 character print width
@@ -41,20 +43,22 @@ hugo                                 # Build static site
 **YAML** (.yml, .yaml)
 - Single quotes for strings
 
-### Tailwind CSS & Styling
-- Use Tailwind utility classes; avoid custom CSS when possible
-- Color variables use CSS custom properties (e.g., `--color-primary-500`)
-- Dark mode uses `class` strategy
-- Refer to `tailwind.config.js` for available screens/colors
+### CSS & Styling
+- Theme styles live in `themes/juris/assets/css/juris.css`
+- Use the existing CSS custom properties for colors, fonts, and header height
+- Preserve the light palette, responsive layouts, and reduced-motion support
 
 ### Project Structure
 - `/content/` - Markdown content files
 - `/config/` - Hugo configuration files
-- `/themes/blowfish/` - Blowfish theme (separate repo, Git submodule)
-- `/assets/` - Static assets and compiled CSS
+- `/themes/juris/` - Custom Hugo theme, including templates, CSS, and JavaScript
+- `/assets/` - Images and icons processed by Hugo
+- `/data/portfolio.toml` - Homepage copy and project selection
+- `/static/` - Files copied directly into the generated site
+- `/docs/` - Committed production export for GitHub Pages
 - Archetypes in `/archetypes/` define content templates
 
 ## Additional Notes
-- Minimum Hugo version: 0.87.0 (current: v0.152.2)
+- Minimum Hugo version: 0.152.2 (declared by `themes/juris/theme.toml`)
 - No tests or linting CI configured
-- EditorConfig enforces consistent whitespace (charset: utf-8, LF line endings)
+- Use UTF-8 and LF line endings

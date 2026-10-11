@@ -1,6 +1,5 @@
 # -- Site Configuration --
-# Refer to the theme docs for more details about each of these parameters.
-# https://blowfish.page/docs/getting-started/
+# Custom theme documentation: themes/juris/README.md
 
 theme = "juris"
 # baseURL = "https://your_domain.com/"
