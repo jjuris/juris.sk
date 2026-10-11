@@ -200,6 +200,7 @@
     if (!target || reducedMotion.matches) {
       return;
     }
+    const pointerNavigation = event.detail > 0;
     event.preventDefault();
     cancelScroll();
     const start = window.scrollY;
@@ -233,10 +234,18 @@
         if (!alreadyFocusable) {
           target.setAttribute("tabindex", "-1");
         }
+        target.classList.toggle("pointer-focus-target", pointerNavigation);
         target.focus({ preventScroll: true });
-        if (!alreadyFocusable) {
-          target.addEventListener("blur", () => target.removeAttribute("tabindex"), { once: true });
-        }
+        target.addEventListener(
+          "blur",
+          () => {
+            target.classList.remove("pointer-focus-target");
+            if (!alreadyFocusable) {
+              target.removeAttribute("tabindex");
+            }
+          },
+          { once: true },
+        );
       }
     };
     scrollAnimation = window.requestAnimationFrame(step);
